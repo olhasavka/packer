@@ -16,15 +16,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
-          
-
       - name: Run database migration
       - uses: "marvinpinto/action-inject-ssm-secrets@latest"
         with:
@@ -47,7 +44,6 @@ jobs:
           ssm_parameter: "/${{ github.event.inputs.environment }}/getstream-io/api-key"
           env_variable_name: "GETSTREAM_IO_API_KEY"
         env:
-          #DB_PROTOCOL: mongodb+srv
           PHOTOS_CDN_BASE: images.api.vybzapp.com
           AWS_S3_AVATAR_BUCKET_URL: https://${{ github.event.inputs.environment }}-vybz-public.s3.${{ env.AWS_REGION }}.amazonaws.com/new_avatars
           AWS_S3_PROMO_IMG_BUCKET_URL: https://${{ github.event.inputs.environment }}-vybz-public.s3.${{ env.AWS_REGION }}.amazonaws.com/promo/imgs
