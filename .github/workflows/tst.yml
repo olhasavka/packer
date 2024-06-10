@@ -5,14 +5,12 @@
       #- main
 name: CICD BLANK 1
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "The environment to deploy to"
-        required: true
-        type: environment  
-#env:
-  #AWS_REGION: ${{ secrets.AWS_REGION }}  
+  push:
+    branches:
+      - tst 
+      
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION }}  
   
 permissions:
   contents: read
@@ -20,8 +18,8 @@ permissions:
 jobs:  
   deploy:
     runs-on: ubuntu-latest
-    #environment:
-      #name: tst
+    environment:
+      name: ${{ github.ref_name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
