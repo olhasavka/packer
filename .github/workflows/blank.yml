@@ -23,19 +23,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
       - name: Run database migration
-      - uses: "marvinpinto/action-inject-ssm-secrets@latest"
-        with:
-          ssm_parameter: "/${{ github.event.inputs.environment }}/mongo-atlas/db"
-          env_variable_name: "DB_USERNAME"
-      - uses: "marvinpinto/action-inject-ssm-secrets@latest"
-        with:
-          ssm_parameter: "/${{ github.event.inputs.environment }}/mongo-atlas/db"
-          env_variable_name: "DB_NAME"
-      - uses: "marvinpinto/action-inject-ssm-secrets@latest"
-        with:
-          ssm_parameter: "/${{ github.event.inputs.environment }}/mongo-atlas/host"
-          env_variable_name: "DB_HOST"
-      - uses: "marvinpinto/action-inject-ssm-secrets@latest"
+        uses: "marvinpinto/action-inject-ssm-secrets@latest"
         with:
           ssm_parameter: "/${{ github.event.inputs.environment }}/mongo-atlas/protocol"
           env_variable_name: "DB_PROTOCOL"
