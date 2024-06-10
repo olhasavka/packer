@@ -52,8 +52,8 @@ jobs:
           AWS_S3_AVATAR_BUCKET_URL: https://${{ github.event.inputs.environment }}-vybz-public.s3.${{ env.AWS_REGION }}.amazonaws.com/new_avatars
           AWS_S3_PROMO_IMG_BUCKET_URL: https://${{ github.event.inputs.environment }}-vybz-public.s3.${{ env.AWS_REGION }}.amazonaws.com/promo/imgs
           AWS_S3_MEDIA_CONTENT_BUCKET_NAME: ${{ github.event.inputs.environment }}-vybz-bucket-media
-      #- name: Run database migration
-      - run: |
+      - name: Run database migration
+        run: |
           echo "......."
           echo "ok"
           echo "...ok...."
