@@ -7,7 +7,8 @@ name: CICD TST
 on:
   push:
     branches:
-      - 'tst' 
+      - tst
+  workflow_dispatch:
       
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}  
