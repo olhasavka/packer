@@ -37,7 +37,7 @@ jobs:
           AWS_S3_PROMO_IMG_BUCKET_URL: https://${{ github.event.inputs.environment }}-vybz-public.s3.${{ env.AWS_REGION }}.amazonaws.com/promo/imgs
           AWS_S3_MEDIA_CONTENT_BUCKET_NAME: ${{ github.event.inputs.environment }}-vybz-bucket-media
       - name: Run ddddatabase migration 
-        run: "knkn"
+        run: "knjjjkn"
           
      
       
