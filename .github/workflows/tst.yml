@@ -7,7 +7,7 @@ name: CICD TST
 on:
   push:
     branches:
-      - tst 
+      - 'tst' 
       
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}  
