@@ -1,11 +1,8 @@
 name: CICD backend-api
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "The environment to deploy to"
-        required: true
-        type: environment
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
