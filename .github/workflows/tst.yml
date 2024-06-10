@@ -3,7 +3,7 @@
   #push:
     #branches:
       #- main
-name: CICD BLANK 1
+name: CICD TST
 on:
   push:
     branches:
