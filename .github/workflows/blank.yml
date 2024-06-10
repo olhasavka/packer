@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-
+  
 permissions:
   contents: read
 env:
@@ -12,6 +12,8 @@ env:
 jobs:  
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: tst
     steps:
       - name: Checkout
         uses: actions/checkout@v4
