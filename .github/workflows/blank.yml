@@ -1,9 +1,16 @@
-name: CICD backend-api
+#name: CICD backend-api
+#on:
+  #push:
+    #branches:
+      #- main
+name: CICD BLANK
 on:
-  push:
-    branches:
-      - main
-  
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "The environment to deploy to"
+        required: true
+        type: environment  
 permissions:
   contents: read
 env:
@@ -12,8 +19,8 @@ env:
 jobs:  
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: tst
+    #environment:
+      #name: tst
     steps:
       - name: Checkout
         uses: actions/checkout@v4
