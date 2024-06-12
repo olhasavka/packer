@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - ${{ github.ref_name }}
-  workflow_dispatch:
 
 permissions:
   contents: read
