@@ -1,8 +1,7 @@
 name: CI/CD blank
 on:
   push:
-    branches:
-      - ${{ github.ref_name }}
+    branches: ["tst", "uat"]
 
 permissions:
   contents: read
