@@ -13,7 +13,7 @@ jobs:
     environment: ${{ github.ref_name }}
     steps:
       - name: echo env
-        run: 
+        run: |
            echo ${{ github.ref_name ,,}}
            echo ${{ github.ref_name ^^}}
          
