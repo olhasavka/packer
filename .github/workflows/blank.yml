@@ -21,3 +21,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.14.0
+  api-tests: 
+     if: github.ref == 'refs/heads/prod'
+     runs-on: ubuntu-latest
+     steps:
+     - name: some prod echo
+       run: echo "it's a prod"
+
+  notapi-tests: 
+     if: github.ref == 'refs/heads/tst'
+     runs-on: ubuntu-latest
+     steps:
+     - name: some notprod echo
+       run: echo "it's not a prod"
