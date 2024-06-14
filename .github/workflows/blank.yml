@@ -14,8 +14,8 @@ jobs:
     steps:
       - name: echo env
         run: |
-           echo ${{ github.ref_name ,,}}
-           echo ${{ github.ref_name ^^}}
+           echo ${{ github.ref_name }}
+           echo ${{ github.ref_name }}
          
       - name: install node
         uses: actions/setup-node@v4
